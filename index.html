@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3-Month Analytics & Biostats Career Sandbox Plan</title>
+    <title>Detailed 3-Month Dual-Track Analytics Study Plan</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -14,6 +14,7 @@
             --accent-path2: #34d399;
             --reward-color: #f59e0b;
             --border-color: #334155;
+            --step-bg: #090d16;
         }
 
         body {
@@ -22,311 +23,516 @@
             color: var(--text-main);
             margin: 0;
             padding: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
-        h1 {
-            margin: 0 0 10px 0;
-            font-size: 2rem;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
+        h1 { margin: 0 0 10px 0; font-size: 2.2rem; }
+        .subtitle { color: var(--text-muted); font-size: 1rem; }
 
         .search-bar {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             background-color: var(--card-bg);
             color: var(--text-main);
             font-size: 1rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-sizing: border-box;
         }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
         }
 
-        @media (max-width: 900px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 1024px) {
+            .grid { grid-template-columns: 1fr; }
         }
 
         .path-card {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             border: 1px solid var(--border-color);
         }
 
-        .path-1 { border-top: 4px solid var(--accent-path1); }
-        .path-2 { border-top: 4px solid var(--accent-path2); }
+        .path-1 { border-top: 5px solid var(--accent-path1); }
+        .path-2 { border-top: 5px solid var(--accent-path2); }
 
-        h2 {
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        h2 { margin-top: 0; font-size: 1.5rem; }
 
-        .month-block {
-            margin-bottom: 25px;
-            background: rgba(0,0,0,0.2);
-            padding: 15px;
+        .week-block {
+            margin-bottom: 20px;
+            background: rgba(0,0,0,0.25);
+            padding: 16px;
             border-radius: 8px;
+            border-left: 3px solid var(--border-color);
         }
 
-        .month-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+        .path-1 .week-block { border-left-color: var(--accent-path1); }
+        .path-2 .week-block { border-left-color: var(--accent-path2); }
+
+        .week-title {
+            font-weight: 700;
+            font-size: 1.05rem;
             margin-bottom: 10px;
             color: var(--text-main);
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .task-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .task-list { list-style: none; padding: 0; margin: 0; }
 
         .task-item {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
         }
 
         .task-item input[type="checkbox"] {
-            margin-top: 4px;
+            margin-top: 6px;
+            transform: scale(1.2);
             cursor: pointer;
         }
 
-        .task-content {
-            flex-grow: 1;
-        }
-
-        .task-title {
-            font-weight: 600;
-        }
+        .task-content { flex-grow: 1; }
+        .task-title { font-weight: 600; font-size: 1rem; color: #ffffff; }
 
         .resource-link {
             display: inline-block;
-            margin-top: 4px;
+            margin-top: 6px;
+            margin-right: 10px;
             font-size: 0.85rem;
             color: var(--accent-path1);
             text-decoration: none;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
         }
 
         .path-2 .resource-link {
             color: var(--accent-path2);
+            background: rgba(52, 211, 153, 0.1);
         }
 
-        .resource-link:hover {
-            text-decoration: underline;
+        .resource-link:hover { text-decoration: underline; }
+
+        .steps-box {
+            background: var(--step-bg);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            margin-top: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .code-block {
-            background: #090d16;
-            padding: 8px 12px;
-            border-radius: 4px;
+        .steps-box ol { margin: 5px 0 0 0; padding-left: 20px; }
+        .steps-box li { margin-bottom: 4px; }
+
+        .code-snippet {
             font-family: monospace;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            color: #e2e8f0;
-            overflow-x: auto;
+            background: #111827;
+            padding: 6px 10px;
+            border-radius: 4px;
+            color: #38bdf8;
+            display: block;
+            margin-top: 4px;
+            white-space: pre-wrap;
         }
 
         .alumni-quote {
-            background-color: rgba(255,255,255,0.05);
-            border-left: 3px solid var(--text-muted);
-            padding: 8px 12px;
+            background-color: rgba(255,255,255,0.03);
+            border-left: 2px solid var(--text-muted);
+            padding: 6px 10px;
             font-style: italic;
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             margin-top: 8px;
             color: #cbd5e1;
         }
 
         .reward-card {
-            margin-top: 15px;
-            background: rgba(245, 158, 11, 0.1);
+            margin-top: 20px;
+            background: rgba(245, 158, 11, 0.08);
             border: 1px dashed var(--reward-color);
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 12px 16px;
+            border-radius: 8px;
             font-size: 0.9rem;
             color: var(--reward-color);
         }
 
-        .hidden {
-            display: none !important;
-        }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Analytics & Biostats Career Explorer Plan</h1>
-        <div class="subtitle">3-Month Hands-On Sandbox to Test Your Fit • From Scratch to Master-Ready</div>
+        <h1>3-Month Step-by-Step Career Execution Sandbox</h1>
+        <div class="subtitle">Detailed Weekly Syllabus • From Absolute Beginner to Decision-Ready Portfolio</div>
     </header>
 
-    <input type="text" id="searchInput" class="search-bar" placeholder="Search tasks, datasets, tools (e.g., Python, Survival Analysis, SQL, Dashboard)..." onkeyup="filterTasks()">
+    <input type="text" id="searchInput" class="search-bar" placeholder="Filter by week, tool, technique (e.g., Week 1, Python, KM Curve, Tableau, SQL)..." onkeyup="filterTasks()">
 
     <div class="grid">
+        <!-- PATH 1 -->
         <div class="path-card path-1">
             <h2>📊 Path 1: Applied Statistics & Business Analytics</h2>
-            <p><strong>Goal:</strong> Turn messy transactional logs into visual executive decisions.</p>
+            <p><strong>Role Simulated:</strong> Business Analyst / Commercial Data Analyst</p>
 
-            <div class="month-block">
-                <div class="month-title">Month 1: SQL Foundations & Python Data Wrangling</div>
+            <!-- MONTH 1 -->
+            <h3>MONTH 1: Tool Setup & Advanced Data Aggregation</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 1: Setup & Python Pandas Basics</span></div>
                 <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">SQL Segmenting Exercise</span>
-                            <div>Extract users with purchases in the last 30 days using basic aggregation.</div>
-                            <div class="code-block">SELECT CustomerID, SUM(UnitPrice*Quantity) AS Spend <br>FROM Transactions GROUP BY CustomerID HAVING Spend > 0;</div>
-                            <a class="resource-link" href="https://www.coursera.org/professional-certificates/google-advanced-data-analytics" target="_blank">🔗 Resource: Google Advanced Data Analytics (Course 2 & 3)</a>
-                            <div class="alumni-quote">"Alumni Note: In real life, 60% of your time is spent in SQL cleaning transactional logs before doing any fancy analytics."</div>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <input type="checkbox" onchange="checkReward()">
-                        <div class="task-content">
-                            <span class="task-title">Load Open-Source Dataset</span>
-                            <div>Download the <strong>UCI Online Retail Dataset</strong> (or Kaggle Advertising Dataset for a simplified start). Set up your Python environment using Pandas.</div>
-                            <a class="resource-link" href="https://archive.ics.uci.edu/ml/datasets/online+retail" target="_blank">🔗 Download Dataset: UCI Online Retail</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="month-block">
-                <div class="month-title">Month 2: Predictive Modeling (Regression)</div>
-                <ul class="task-list">
-                    <li class="task-item">
-                        <input type="checkbox" onchange="checkReward()">
-                        <div class="task-content">
-                            <span class="task-title">Run Applied Regression</span>
-                            <div>In Python or R, regress total spend against frequency and average basket size to determine key purchase drivers.</div>
-                            <a class="resource-link" href="https://www.coursera.org/specializations/business-statistics-analysis" target="_blank">🔗 Course: Business Statistics & Analysis Specialization (Rice Univ)</a>
-                            <a class="resource-link" href="https://www.youtube.com/results?search_query=Basic+Statistical+Functions+in+R" target="_blank">🔗 Video: Basic Statistical Functions in R</a>
-                            <div class="alumni-quote">"Alumni Note: Executives don't care about your $R^2$ values. They want to know where to direct the marketing budget."</div>
+                            <span class="task-title">Install Environment & Import Online Retail Data</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Install Anaconda or use Google Colab (free in-browser Jupyter notebook).</li>
+                                    <li>Download the <code>Online Retail II</code> Excel/CSV file from Kaggle or UCI.</li>
+                                    <li>Run the following loading code:</li>
+                                </ol>
+                                <span class="code-snippet">import pandas as pd<br>df = pd.read_csv('online_retail.csv')<br>print(df.head())</span>
+                            </div>
+                            <a class="resource-link" href="https://archive.ics.uci.edu/dataset/352/online+retail+ii" target="_blank">🔗 Dataset: UCI Online Retail II</a>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=vmEHCJofslg" target="_blank">🔗 Video: Pandas Tutorial for Beginners</a>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <div class="month-block">
-                <div class="month-title">Month 3: Dashboards & Non-Technical Delivery</div>
+            <div class="week-block">
+                <div class="week-title"><span>Week 2: SQL Data Extraction & Filtering</span></div>
                 <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">Build a Visual Dashboard</span>
-                            <div>Connect your cleaned dataset to Power BI or Tableau to build an interactive dashboard tracking high-value customer cohorts.</div>
-                        </li>
+                            <span class="task-title">Query Active Customer Cohorts</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Load your retail CSV into a SQLite database using Python: <code>df.to_sql('retail', conn)</code>.</li>
+                                    <li>Write a SQL query to isolate customers who purchased in the last 30 days and spent over $100.</li>
+                                </ol>
+                                <span class="code-snippet">SELECT CustomerID, COUNT(InvoiceNo) AS OrderCount, SUM(Quantity * UnitPrice) AS TotalSpend<br>FROM retail<br>GROUP BY CustomerID<br>HAVING TotalSpend > 100;</span>
+                            </div>
+                            <a class="resource-link" href="https://www.coursera.org/professional-certificates/google-advanced-data-analytics" target="_blank">🔗 Course: Google Advanced Data Analytics (SQL module)</a>
+                            <div class="alumni-quote">"Alumni Insight: 70% of business analytics work is structuring raw transaction tables into summary tables like this before doing any math."</div>
+                        </div>
                     </li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 3 & 4: Data Cleaning & Feature Engineering</span></div>
+                <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">5-Slide Business Pitch Deliverable</span>
-                            <div>Prepare a 5-slide presentation. <strong>Challenge:</strong> Explain your findings without using words like "regression" or "p-value".</div>
+                            <span class="task-title">Handle Missing Values & Cancelled Orders</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Remove rows where <code>CustomerID</code> is missing (NaN).</li>
+                                    <li>Filter out cancelled transactions (Invoice numbers starting with 'C').</li>
+                                    <li>Create new variables: <code>AvgBasketSize = TotalQuantity / OrderCount</code>.</li>
+                                </ol>
+                            </div>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=bDhvCp3_lYw" target="_blank">🔗 Video: Data Cleaning in Python Pandas</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MONTH 2 -->
+            <h3>MONTH 2: Linear Regression & Drivers Analysis</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 5 & 6: Applied Regression Modeling</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Predict Customer Spending</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Set your target variable ($Y$) = <code>TotalSpend</code>.</li>
+                                    <li>Set predictors ($X$) = <code>OrderCount</code>, <code>AvgBasketSize</code>, and <code>DaysSinceLastPurchase</code>.</li>
+                                    <li>Fit a Linear Regression model using <code>statsmodels</code> in Python or R.</li>
+                                </ol>
+                                <span class="code-snippet">import statsmodels.api as sm<br>X = df[['OrderCount', 'AvgBasketSize']]<br>y = df['TotalSpend']<br>model = sm.OLS(y, sm.add_constant(X)).fit()<br>print(model.summary())</span>
+                            </div>
+                            <a class="resource-link" href="https://www.coursera.org/specializations/business-statistics-analysis" target="_blank">🔗 Course: Business Statistics (Rice University)</a>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=PaFPbb66DxQ" target="_blank">🔗 Video: Linear Regression Simply Explained</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 7 & 8: Model Interpretation</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Extract Business Insights</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Examine coefficients: If <code>OrderCount</code> coefficient is +45.2, each extra order increases lifetime value by $45.20.</li>
+                                    <li>Identify which behavior has the largest effect on revenue.</li>
+                                </ol>
+                            </div>
+                            <div class="alumni-quote">"Alumni Insight: Stakeholders won't ask for your p-values. They want to know: 'Should we run a campaign to increase purchase frequency or increase basket size?'"</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MONTH 3 -->
+            <h3>MONTH 3: Dashboarding & Executive Presentation</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 9 & 10: Interactive Visualization</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Build a Power BI / Tableau Dashboard</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Export your cleaned dataset to CSV.</li>
+                                    <li>Connect to Tableau Public (Free) or Power BI Desktop (Free).</li>
+                                    <li>Create 3 charts: Customer Spend by Country, Frequency vs. Revenue scatter plot, and Top 10 Customer Table.</li>
+                                </ol>
+                            </div>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=TPPlXpykW-o" target="_blank">🔗 Video: Tableau Desktop Beginner Course</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 11 & 12: Final Executive Slide Deck</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Deliver the 5-Slide Presentation</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Slide 1: Problem Statement & Dataset Overview.</li>
+                                    <li>Slide 2: Key Customer Segments.</li>
+                                    <li>Slide 3: Top Spend Drivers (Visual Chart).</li>
+                                    <li>Slide 4: Strategic Recommendations (e.g., "Incentivize 2nd purchase within 14 days").</li>
+                                    <li>Slide 5: Expected ROI.</li>
+                                    <li><strong>Constraint Check:</strong> Confirm zero usage of stats jargon ("statistically significant", "p-value", "regression").</li>
+                                </ol>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </div>
 
             <div class="reward-card">
-                <strong>🎁 Path 1 Milestone Reward:</strong> Treat yourself to a premium coffee or lunch when you complete Month 1, and buy a book on visualization design (e.g., <em>Storytelling with Data</em>) when you complete the 5-slide deck!
+                <strong>🎁 Path 1 Milestone Rewards:</strong><br>
+                • Month 1 Complete: Buy your favorite dessert.<br>
+                • Month 2 Complete: Buy a physical copy of <em>Storytelling with Data</em> by Cole Nussbaumer Knaflic.<br>
+                • Month 3 Complete: Present deck to a friend & take a full day off!
             </div>
         </div>
 
+        <!-- PATH 2 -->
         <div class="path-card path-2">
             <h2>🩺 Path 2: Biostatistics & Clinical Research</h2>
-            <p><strong>Goal:</strong> Measure safety, survival rates, and drug efficacy with scientific precision.</p>
+            <p><strong>Role Simulated:</strong> Biostatistician / Clinical Data Scientist</p>
 
-            <div class="month-block">
-                <div class="month-title">Month 1: Clinical Foundations & Vectors</div>
+            <!-- MONTH 1 -->
+            <h3>MONTH 1: R/SAS Foundations & Clinical Datasets</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 1: R Studio & Data Types</span></div>
                 <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">R/SAS Fundamentals & Data Loading</span>
-                            <div>Learn basic vector manipulation in R/SAS and import clinical cohort records.</div>
-                            <a class="resource-link" href="https://www.youtube.com/results?search_query=Basic+Statistical+Functions+in+R" target="_blank">🔗 Video: Basic Statistical Functions in R</a>
-                            <a class="resource-link" href="https://archive.ics.uci.edu/ml/datasets/heart+failure+clinical+records" target="_blank">🔗 Download Dataset: UCI Heart Failure Clinical Records</a>
-                            <div class="alumni-quote">"Alumni Note: Biostats requires high precision. Standardizing your cohort definitions early saves months of regulatory headache."</div>
+                            <span class="task-title">Install RStudio & Load Heart Failure Data</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Install R and RStudio Desktop (free open source).</li>
+                                    <li>Download the <code>Heart Failure Clinical Records</code> CSV from UCI.</li>
+                                    <li>Run the following script:</li>
+                                </ol>
+                                <span class="code-snippet">data <- read.csv("heart_failure_clinical_records_dataset.csv")<br>str(data)<br>summary(data$age)</span>
+                            </div>
+                            <a class="resource-link" href="https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records" target="_blank">🔗 Dataset: UCI Heart Failure Data</a>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=_V8eKsto3Ug" target="_blank">🔗 Video: R Programming Tutorial for Beginners</a>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <div class="month-block">
-                <div class="month-title">Month 2: Survival Analysis & Hypothesis Testing</div>
+            <div class="week-block">
+                <div class="week-title"><span>Week 2: Clinical Baseline Characteristics</span></div>
                 <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">Kaplan-Meier Curve Construction</span>
-                            <div>Plot survival probability using the <code>time</code> and <code>DEATH_EVENT</code> features. Compare high blood pressure vs. normal pressure groups.</div>
-                            <a class="resource-link" href="https://www.coursera.org/learn/clinical-keyword" target="_blank">🔗 Course: Improving Your Statistical Inferences (TU Eindhoven)</a>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <input type="checkbox" onchange="checkReward()">
-                        <div class="task-content">
-                            <span class="task-title">Log-Rank Rigor Check</span>
-                            <div>Perform a log-rank test to verify if the survival differences between patient cohorts are statistically significant.</div>
-                            <div class="alumni-quote">"Alumni Note: In pharma, standard statistical assumptions are non-negotiable. Replicability is everything."</div>
+                            <span class="task-title">Generate "Table 1" (Clinical Baseline)</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>In clinical trials, Table 1 always compares baseline patient characteristics (Age, Gender, Blood Pressure) across groups.</li>
+                                    <li>Use the R package <code>table1</code> to automatically build this standard medical publication table.</li>
+                                </ol>
+                                <span class="code-snippet">install.packages("table1")<br>library(table1)<br>table1(~ age + ejection_fraction + serum_creatinine | high_blood_pressure, data=data)</span>
+                            </div>
+                            <div class="alumni-quote">"Alumni Insight: Table 1 is required in almost every clinical trial paper submitted to regulatory bodies like the FDA."</div>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <div class="month-block">
-                <div class="month-title">Month 3: Clinical Reporting & Industry Reflection</div>
+            <div class="week-block">
+                <div class="week-title"><span>Week 3 & 4: Hypothesis Testing & Normality Checks</span></div>
                 <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">1-Page Clinical Study Report</span>
-                            <div>Write a formal summary documenting sample sizing, hazard ratios, and regulatory compliance standards for your treatment trial.</div>
-                        </li>
+                            <span class="task-title">Run T-Tests and Chi-Square Tests</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Test if age differs significantly between patients who survived vs. deceased: <code>t.test(age ~ DEATH_EVENT, data=data)</code>.</li>
+                                    <li>Test association between high blood pressure and mortality using Chi-Square: <code>chisq.test(data$high_blood_pressure, data$DEATH_EVENT)</code>.</li>
+                                </ol>
+                            </div>
+                            <a class="resource-link" href="https://www.coursera.org/learn/clinical-keyword" target="_blank">🔗 Course: Improving Statistical Inferences (TU Eindhoven)</a>
+                        </div>
                     </li>
+                </ul>
+            </div>
+
+            <!-- MONTH 2 -->
+            <h3>MONTH 2: Survival Analysis & KM Curves</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 5 & 6: Construct Kaplan-Meier Curves</span></div>
+                <ul class="task-list">
                     <li class="task-item">
                         <input type="checkbox" onchange="checkReward()">
                         <div class="task-content">
-                            <span class="task-title">Industry Trade-Off Reflection</span>
-                            <div>Evaluate job security vs. specialized domain constraints by engaging with domain discussions.</div>
-                            <a class="resource-link" href="https://www.reddit.com/r/statistics/" target="_blank">🔗 Industry Discussion: r/statistics Biostats vs Stats Debate</a>
+                            <span class="task-title">Fit Survival Models in R</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Install R packages <code>survival</code> and <code>survminer</code>.</li>
+                                    <li>Define the survival object using follow-up time (<code>time</code>) and status (<code>DEATH_EVENT</code>).</li>
+                                    <li>Plot survival probability over time split by high blood pressure status.</li>
+                                </ol>
+                                <span class="code-snippet">library(survival)<br>library(survminer)<br>fit <- survfit(Surv(time, DEATH_EVENT) ~ high_blood_pressure, data = data)<br>ggsurvplot(fit, data = data, pval = TRUE)</span>
+                            </div>
+                            <a class="resource-link" href="https://www.youtube.com/watch?v=vX3l36ptrTU" target="_blank">🔗 Video: Survival Analysis & Kaplan Meier in R</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 7 & 8: Log-Rank Testing & Cox Regression</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Evaluate Hazard Ratios</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Execute a Log-Rank test to get the p-value comparing patient survival curves.</li>
+                                    <li>Fit a Cox Proportional Hazards model to adjust for confounding variables (age, serum sodium).</li>
+                                </ol>
+                                <span class="code-snippet">cox_model <- coxph(Surv(time, DEATH_EVENT) ~ age + high_blood_pressure + ejection_fraction, data = data)<br>summary(cox_model)</span>
+                            </div>
+                            <div class="alumni-quote">"Alumni Insight: Cox models allow biostatisticians to isolate the effect of a treatment while controlling for pre-existing medical conditions."</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MONTH 3 -->
+            <h3>MONTH 3: Clinical Reporting & Industry Exploration</h3>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 9 & 10: 1-Page Clinical Study Report (CSR)</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Write Regulatory-Style Findings</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Document the cohort sample size ($N=299$).</li>
+                                    <li>State primary endpoint: Overall Survival over follow-up period.</li>
+                                    <li>Report Hazard Ratios (HR), 95% Confidence Intervals, and p-values.</li>
+                                    <li>Write statistical assumptions verified (e.g., proportional hazards assumption).</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="week-block">
+                <div class="week-title"><span>Week 11 & 12: Career Trade-Off Assessment</span></div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">Industry Reflection & Tool Expansion</span>
+                            <div class="steps-box">
+                                <strong>Step-by-Step Exercise:</strong>
+                                <ol>
+                                    <li>Review clinical trial protocols on ClinicalTrials.gov to see real-world study designs.</li>
+                                    <li>Read r/statistics discussions regarding SAS vs. R usage in CROs (Contract Research Organizations).</li>
+                                    <li>Compare your personal satisfaction doing Path 1 (Commercial/Visual) vs. Path 2 (Scientific/Rigor).</li>
+                                </ol>
+                            </div>
+                            <a class="resource-link" href="https://www.reddit.com/r/statistics/" target="_blank">🔗 Industry Discussion: r/statistics Community</a>
                         </div>
                     </li>
                 </ul>
             </div>
 
             <div class="reward-card">
-                <strong>🎁 Path 2 Milestone Reward:</strong> Order your favorite take-out after completing your first Kaplan-Meier curve, and treat yourself to a day off from coding after completing the Clinical Report!
+                <strong>🎁 Path 2 Milestone Rewards:</strong><br>
+                • Month 1 Complete: Order take-out from your favorite restaurant.<br>
+                • Month 2 Complete: Treat yourself to a movie night after plotting your KM curve.<br>
+                • Month 3 Complete: Take a full weekend off to decide which daily workflow felt best!
             </div>
         </div>
     </div>
@@ -349,10 +555,10 @@
 
     function checkReward() {
         const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
-        if (checkedCount === 4) {
-            alert("🎉 Milestone Reached! You've completed half of your practical explorations. Reward time!");
-        } else if (checkedCount === 8) {
-            alert("🏆 Congratulations! You have completed both career sandbox plans. You now have real project experience to make your final career decision!");
+        if (checkedCount === 6) {
+            alert("🎉 Milestone Reached! You have completed Month 1 for both paths. Time for your reward!");
+        } else if (checkedCount === 12) {
+            alert("🏆 Full Plan Complete! You now have real hands-on experience in both Business Analytics and Biostatistics.");
         }
     }
 </script>
