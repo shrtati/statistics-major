@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Month Analytics & Biostats Career Sandbox Plan</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-path1: #38bdf8;
+            --accent-path2: #34d399;
+            --reward-color: #f59e0b;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .path-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .path-1 { border-top: 4px solid var(--accent-path1); }
+        .path-2 { border-top: 4px solid var(--accent-path2); }
+
+        h2 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .month-block {
+            margin-bottom: 25px;
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .month-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .task-item input[type="checkbox"] {
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .task-content {
+            flex-grow: 1;
+        }
+
+        .task-title {
+            font-weight: 600;
+        }
+
+        .resource-link {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.85rem;
+            color: var(--accent-path1);
+            text-decoration: none;
+        }
+
+        .path-2 .resource-link {
+            color: var(--accent-path2);
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        .code-block {
+            background: #090d16;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            color: #e2e8f0;
+            overflow-x: auto;
+        }
+
+        .alumni-quote {
+            background-color: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--text-muted);
+            padding: 8px 12px;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        .reward-card {
+            margin-top: 15px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px dashed var(--reward-color);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--reward-color);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Analytics & Biostats Career Explorer Plan</h1>
+        <div class="subtitle">3-Month Hands-On Sandbox to Test Your Fit • From Scratch to Master-Ready</div>
+    </header>
+
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search tasks, datasets, tools (e.g., Python, Survival Analysis, SQL, Dashboard)..." onkeyup="filterTasks()">
+
+    <div class="grid">
+        <div class="path-card path-1">
+            <h2>📊 Path 1: Applied Statistics & Business Analytics</h2>
+            <p><strong>Goal:</strong> Turn messy transactional logs into visual executive decisions.</p>
+
+            <div class="month-block">
+                <div class="month-title">Month 1: SQL Foundations & Python Data Wrangling</div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content">
+                            <span class="task-title">SQL Segmenting Exercise</span>
+                            <div>Extract users with purchases in the last 30 days using basic aggregation.</div>
+                            <div class="code-block">SELECT CustomerID, SUM(UnitPrice*Quantity) AS Spend <br>FROM Transactions GROUP BY CustomerID HAVING Spend > 0;</div>
+                            <a class="resource-link" href="https://www.coursera.org/professional-certificates/google-advanced-data-analytics" target="_blank">🔗 Resource: Google Advanced Data Analytics (Course 2 & 3)</a>
+                            <div class="alumni-quote">"Alumni Note: In real life, 60% of your time is spent in SQL cleaning transactional logs before doing any fancy analytics."</div>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox" onchange="checkReward()">
+                        <div class="task-content
